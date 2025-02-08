@@ -10,13 +10,13 @@
             <el-form-item label="发送者id" prop="fkFromUserId">
               <el-input v-model="queryParams.fkFromUserId" placeholder="请输入发送者id" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="会话粒度单调自增序列号" prop="conversationSeq">
+            <el-form-item label="会话序列号" prop="conversationSeq">
               <el-input v-model="queryParams.conversationSeq" placeholder="请输入会话粒度单调自增序列号" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="客户端本地消息id" prop="localMsgId">
+            <el-form-item label="客户端本地id" prop="localMsgId">
               <el-input v-model="queryParams.localMsgId" placeholder="请输入客户端本地消息id" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="载荷内容如图片视频卡片等不同的参数" prop="payload">
+            <el-form-item label="载荷内容" prop="payload">
               <el-input v-model="queryParams.payload" placeholder="请输入载荷内容如图片视频卡片等不同的参数" clearable @keyup.enter="handleQuery" />
             </el-form-item>
             <el-form-item label="媒体文件地址" prop="mediaUrl">
@@ -25,34 +25,34 @@
             <el-form-item label="文字内容" prop="msgText">
               <el-input v-model="queryParams.msgText" placeholder="请输入文字内容" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="接收人,多人用英文逗号分隔-群内指定人员可见场景" prop="receiverOnly">
+            <el-form-item label="接收人" prop="receiverOnly">
               <el-input v-model="queryParams.receiverOnly" placeholder="请输入接收人,多人用英文逗号分隔-群内指定人员可见场景" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="接收方总人数" prop="receiverCount">
+            <el-form-item label="接收方总数" prop="receiverCount">
               <el-input v-model="queryParams.receiverCount" placeholder="请输入接收方总人数" clearable @keyup.enter="handleQuery" />
             </el-form-item>
             <el-form-item label="被引用次数" prop="refCount">
               <el-input v-model="queryParams.refCount" placeholder="请输入被引用次数" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="会话根消息ID(第一条被引用的消息)" prop="rootMsgId">
+            <el-form-item label="会话根引用消息ID" prop="rootMsgId">
               <el-input v-model="queryParams.rootMsgId" placeholder="请输入会话根消息ID(第一条被引用的消息)" clearable @keyup.enter="handleQuery" />
             </el-form-item>
             <el-form-item label="直接引用的消息ID" prop="parentMsgId">
               <el-input v-model="queryParams.parentMsgId" placeholder="请输入直接引用的消息ID" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="是否删除 0-未删除 1-已删除" prop="deleted">
+            <el-form-item label="是否删除" prop="deleted">
               <el-input v-model="queryParams.deleted" placeholder="请输入是否删除 0-未删除 1-已删除" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="@全体成员标记 0-否 1-是" prop="atAll">
+            <el-form-item label="@全体成员标记" prop="atAll">
               <el-input v-model="queryParams.atAll" placeholder="请输入@全体成员标记 0-否 1-是" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="可选 自定义属性，供开发者扩展使用" prop="extras">
+            <el-form-item label="可选属性" prop="extras">
               <el-input v-model="queryParams.extras" placeholder="请输入可选 自定义属性，供开发者扩展使用" clearable @keyup.enter="handleQuery" />
             </el-form-item>
             <el-form-item label="应用ID" prop="appId">
               <el-input v-model="queryParams.appId" placeholder="请输入应用ID" clearable @keyup.enter="handleQuery" />
             </el-form-item>
-            <el-form-item label="接收者ID(单聊必填)" prop="toUid">
+            <el-form-item label="接收者ID" prop="toUid">
               <el-input v-model="queryParams.toUid" placeholder="请输入接收者ID(单聊必填)" clearable @keyup.enter="handleQuery" />
             </el-form-item>
             <el-form-item label="命令类型" prop="cmd">
@@ -103,23 +103,23 @@
         <el-table-column label="会话粒度单调自增序列号" align="center" prop="conversationSeq" />
         <el-table-column label="客户端本地消息id" align="center" prop="localMsgId" />
         <el-table-column label="消息类型" align="center" prop="msgType" />
-        <el-table-column label="载荷内容如图片视频卡片等不同的参数" align="center" prop="payload" />
+        <el-table-column label="载荷内容" align="center" prop="payload" />
         <el-table-column label="媒体文件地址" align="center" prop="mediaUrl" />
         <el-table-column label="文字内容" align="center" prop="msgText" />
-        <el-table-column label="被@用户列表 格式:[{userId:1,name:"张三"},{userId:2,name:"李四"}]" align="center" prop="atUsers" />
+        <el-table-column label="被@用户列表 " align="center" prop="atUsers" />
         <el-table-column label="消息状态 1正常 2已撤回" align="center" prop="msgStatus" />
-        <el-table-column label="接收人,多人用英文逗号分隔-群内指定人员可见场景" align="center" prop="receiverOnly" />
+        <el-table-column label="接收人" align="center" prop="receiverOnly" />
         <el-table-column label="接收方总人数" align="center" prop="receiverCount" />
         <el-table-column label="被引用次数" align="center" prop="refCount" />
         <el-table-column label="引用类型:0原创,1回复,2转发,3引用" align="center" prop="refType" />
-        <el-table-column label="会话根消息ID(第一条被引用的消息)" align="center" prop="rootMsgId" />
+        <el-table-column label="会话根引用消息ID" align="center" prop="rootMsgId" />
         <el-table-column label="直接引用的消息ID" align="center" prop="parentMsgId" />
         <el-table-column label="是否删除 0-未删除 1-已删除" align="center" prop="deleted" />
-        <el-table-column label="@全体成员标记 0-否 1-是" align="center" prop="atAll" />
-        <el-table-column label="可选 自定义属性，供开发者扩展使用" align="center" prop="extras" />
+        <el-table-column label="@全体成员标记" align="center" prop="atAll" />
+        <el-table-column label="可选 自定义属性" align="center" prop="extras" />
         <el-table-column label="应用ID" align="center" prop="appId" />
         <el-table-column label="会话类型:1单聊,2群聊,3聊天室" align="center" prop="conversationType" />
-        <el-table-column label="接收者ID(单聊必填)" align="center" prop="toUid" />
+        <el-table-column label="接收者ID" align="center" prop="toUid" />
         <el-table-column label="命令类型" align="center" prop="cmd" />
         <el-table-column label="是否持久化" align="center" prop="persistent" />
         <el-table-column label="消息优先级" align="center" prop="priority" />
@@ -330,7 +330,7 @@ const data = reactive<PageData<MessageForm, MessageQuery>>({
       { required: true, message: "文字内容不能为空", trigger: "blur" }
     ],
     atUsers: [
-      { required: true, message: "被@用户列表 格式:[{userId:1,name:"张三"},{userId:2,name:"李四"}]不能为空", trigger: "blur" }
+      { required: true, message: "被@用户列表 不能为空", trigger: "blur" }
     ],
     msgStatus: [
       { required: true, message: "消息状态 1正常 2已撤回不能为空", trigger: "change" }
